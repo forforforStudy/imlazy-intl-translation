@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-const imlazyIt = require('../imlazy-intl-translation')
+const imlazyIt = require('..')
 
 const rp = process.argv[2]
 const wp = process.argv[3]

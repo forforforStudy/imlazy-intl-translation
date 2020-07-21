@@ -1,7 +1,7 @@
 {
   "name": "imlazy-intl-translation",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "repository": "https://github.com/forforforStudy/json-intl-translation.git",
   "author": "林楠 <282712@nd.com>",
   "license": "MIT",
