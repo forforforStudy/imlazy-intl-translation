@@ -25,7 +25,7 @@ describe('translate core', () => {
 
   it('translate invalid text return undefined', (done) => {
     translate('').then((translatedText) => {
-      expect(translatedText).toBeUndefined()
+      expect(translatedText).toEqual('')
       done()
     })
   })
