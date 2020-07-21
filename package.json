@@ -1,10 +1,11 @@
 {
-  "name": "json-intl-translation",
+  "name": "imlazy-intl-translation",
   "version": "1.0.0",
   "main": "index.ts",
   "repository": "https://github.com/forforforStudy/json-intl-translation.git",
   "author": "林楠 <282712@nd.com>",
   "license": "MIT",
+  "bin": "",
   "dependencies": {
     "@types/lodash": "^4.14.157",
     "chalk": "^4.1.0",
