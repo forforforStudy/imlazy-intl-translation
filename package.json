@@ -6,7 +6,9 @@
   "author": "林楠 <282712@nd.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/lodash": "^4.14.157",
     "chalk": "^4.1.0",
+    "lodash": "^4.17.19",
     "translation.js": "^0.7.15",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
