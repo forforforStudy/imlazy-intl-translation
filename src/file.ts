@@ -7,13 +7,11 @@ import { flip } from 'lodash'
 
 export async function translateJSONFile(filePath: string, writePath: string) {
   if (!filePath) {
-    warnningLogger('read file path is empty, please check it.')
-    return
+    throw new Error('read file path is empty, please check it.')
   }
 
   if (!writePath) {
-    warnningLogger('write file path is empty, please check it.')
-    return
+    throw new Error('write file path is empty, please check it.')
   }
 
   try {

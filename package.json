@@ -6,6 +6,14 @@
   "author": "林楠 <282712@nd.com>",
   "license": "MIT",
   "bin": "./bin/imlazy-it",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "prepublish": "npm run test && npm run build"
+  },
   "dependencies": {
     "chalk": "^4.1.0",
     "jsonfile": "^6.0.1",
