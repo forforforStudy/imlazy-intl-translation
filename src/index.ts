@@ -1,5 +1,5 @@
-import * as chalk from 'chalk'
-import { startCase, isEmpty } from 'lodash'
+import chalk from 'chalk'
+import { startCase, isEmpty, isString } from 'lodash'
 import { baidu, google, youdao } from 'translation.js'
 
 const log = console.log
@@ -10,6 +10,14 @@ const engines = [google, youdao, baidu]
 const globalCache: Map<string, string> = new Map()
 
 export async function translate(text: string, enginesIndex = 0): Promise<string | undefined> {
+  /**
+   * 无效的翻译对象返回 undefined
+   */
+  if (!isString(text) || text === '') {
+    warnningLogger('input text is invalid string value.')
+    return
+  }
+
   if (!globalCache.get(text)) {
     if (enginesIndex >= engines.length) {
       warnningLogger(`translate fail, all engines can\'t do success of key "${text}"`)
@@ -21,14 +29,19 @@ export async function translate(text: string, enginesIndex = 0): Promise<string 
         const translatedText = startCase(tranResponse.result[0])
 
         globalCache.set(text, translatedText)
+        infoLogger(`translate success, text: ${text}`)
 
         return translatedText
       } else {
         throw new Error()
       }
-
     } catch (error) {
       return translate(text, enginesIndex + 1)
     }
+  } else {
+    /**
+     * 命中缓存后从缓存中获取
+     */
+    return globalCache.get(text)
   }
 }
