@@ -6,9 +6,6 @@
   "author": "林楠 <282712@nd.com>",
   "license": "MIT",
   "bin": "./bin/imlazy-it",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "tsc",
     "test": "jest"
