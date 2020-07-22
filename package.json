@@ -1,11 +1,14 @@
 {
   "name": "imlazy-intl-translation",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "repository": "https://github.com/forforforStudy/imlazy-intl-translation.git",
   "author": "林楠 <282712@nd.com>",
   "license": "MIT",
   "bin": "./bin/imlazy-it",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest"
