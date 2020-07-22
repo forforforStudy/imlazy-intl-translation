@@ -4,7 +4,7 @@ import { baidu, google, youdao } from 'translation.js'
 import { includeHan } from './utils/detecter'
 import { infoLogger, warnningLogger } from './utils/logger'
 
-const engines = [google, youdao, baidu]
+const engines = [youdao, baidu, google]
 const globalCache: Map<string, string> = new Map()
 
 export async function translate(text: string, enginesIndex = 0): Promise<string | undefined> {

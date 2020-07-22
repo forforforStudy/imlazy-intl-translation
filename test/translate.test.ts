@@ -55,7 +55,7 @@ describe('translate core', () => {
     forEach(values(translatedObjectResults), (result) => {
       expect(includeHan(result as string)).toBeFalsy()
     })
-  })
+  }, 60 * 1000)
 
   it('translate illegal object, return empty object', async () => {
     const illegalObjects = [null, undefined, '', 1, NaN]

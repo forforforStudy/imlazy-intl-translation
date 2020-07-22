@@ -28,5 +28,5 @@ describe('translate json file core', () => {
 
       done()
     }).not.toThrowError()
-  })
+  }, 60 * 60 * 1000)
 })

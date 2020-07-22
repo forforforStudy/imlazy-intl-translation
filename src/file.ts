@@ -3,7 +3,6 @@ import os from 'os'
 
 import { translateObject } from './object'
 import { warnningLogger, infoLogger } from './utils/logger'
-import { flip } from 'lodash'
 
 export async function translateJSONFile(filePath: string, writePath: string) {
   if (!filePath) {
