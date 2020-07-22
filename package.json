@@ -11,8 +11,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "jest",
-    "prepublish": "npm run test && npm run build"
+    "test": "jest"
   },
   "dependencies": {
     "chalk": "^4.1.0",
