@@ -1,4 +1,4 @@
-import { startCase, isEmpty, isString } from 'lodash'
+import { capitalize, isEmpty, isString } from 'lodash'
 import { baidu, google, youdao } from 'translation.js'
 
 import { includeHan } from './utils/detecter'
@@ -33,14 +33,12 @@ export async function translate(text: string, enginesIndex = 0): Promise<string 
     try {
       const tranResponse = await engines[enginesIndex].translate({ text })
       if (tranResponse && tranResponse.result && !isEmpty(tranResponse.result)) {
-        const translatedText = startCase(tranResponse.result[0])
+        const translatedText = capitalize(tranResponse.result[0])
 
         globalCache.set(text, translatedText)
         infoLogger(`translate success, text: ${text}`)
 
         return translatedText
-      } else {
-        throw new Error()
       }
     } catch (error) {
       return translate(text, enginesIndex + 1)
