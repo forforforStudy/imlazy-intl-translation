@@ -32,6 +32,11 @@ describe('translate core', () => {
       done()
     })
   })
+  
+  it('translate brackets remains in results', async () => {
+    const tranaslateText = await translate('总共{count}个')
+    expect(tranaslateText && tranaslateText.indexOf('{') > -1 && tranaslateText.indexOf('}') > -1).toBeTruthy()
+  })
 
   it('translate invalid text return undefined', async () => {
     const translatedText = await translate('')

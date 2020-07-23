@@ -28,5 +28,12 @@ describe('translate json file core', () => {
 
       done()
     }).not.toThrowError()
+
   }, 60 * 60 * 1000)
+
+  it('translate json file parameter invalid', async () => {
+    const illegalValue: any = null
+    expect(async () => await translateJSONFile(readFilePath, illegalValue)).rejects.toThrowError()
+    expect(async () => await translateJSONFile(illegalValue, writeFilePath)).rejects.toThrowError()
+  })
 })

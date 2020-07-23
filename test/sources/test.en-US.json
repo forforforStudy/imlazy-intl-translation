@@ -1,16 +1,8 @@
 {
-  "差异比对": "Differences Than",
-  "代表新增": "On Behalf Of The New",
-  "代表删除": "On Behalf Of The Delete",
-  "别名": "The Alias",
+  "差异比对": "Differences than",
+  "代表新增": "On behalf of the new",
+  "代表删除": "On behalf of the delete",
+  "别名": "The alias",
   "版本": "Version",
-  "归属模板": "Belonging To The Template",
-  "是否开放编辑": "Open Editing Or Not",
-  "基础信息": "Basic Information",
-  "知识结构": "The Knowledge Structure",
-  "编辑者": "Editors",
-  "审核者": "Reviewers",
-  "未修改": "Unmodified",
-  "学段": "Learning Period",
-  "年级": "Grade"
+  "总共{count}个": "A total of {count}"
 }
