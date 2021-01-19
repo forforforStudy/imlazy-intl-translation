@@ -62,6 +62,32 @@ describe('translate core', () => {
     })
   }, 60 * 1000)
 
+  it('translate object in order', async () => {
+    const targetObjects = [
+      {
+        "删除成功": "删除成功"
+      },
+      {
+        "模板": "模板",
+        "标签": "标签",
+      },
+      {
+        "太平洋": "太平洋",
+        "美国": "美国"
+      }
+    ]
+
+    const now = Date.now()
+    const translatedObjectResults0 = await translateObject(targetObjects[0] as any)
+    const translatedObjectResults1 = await translateObject(targetObjects[1] as any)
+    const translatedObjectResults2 = await translateObject(targetObjects[2] as any)
+    const doneNow = Date.now()
+
+    expect(doneNow - now).toBeGreaterThanOrEqual(
+      1000 * 2 * (keys(translatedObjectResults0).length + keys(translatedObjectResults1).length + keys(translatedObjectResults2).length)
+    )
+  }, 60 * 1000)
+
   it('translate illegal object, return empty object', async () => {
     const illegalObjects = [null, undefined, '', 1, NaN]
 
