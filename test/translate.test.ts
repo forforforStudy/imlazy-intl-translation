@@ -78,13 +78,13 @@ describe('translate core', () => {
     ]
 
     const now = Date.now()
-    const translatedObjectResults0 = await translateObject(targetObjects[0] as any)
-    const translatedObjectResults1 = await translateObject(targetObjects[1] as any)
-    const translatedObjectResults2 = await translateObject(targetObjects[2] as any)
+    translateObject(targetObjects[0] as any)
+    translateObject(targetObjects[1] as any)
+    await translateObject(targetObjects[2] as any)
     const doneNow = Date.now()
 
     expect(doneNow - now).toBeGreaterThanOrEqual(
-      1000 * 2 * (keys(translatedObjectResults0).length + keys(translatedObjectResults1).length + keys(translatedObjectResults2).length)
+      1000 * 2 * (keys(targetObjects[0]).length + keys(targetObjects[1]).length + keys(targetObjects[2]).length)
     )
   }, 60 * 1000)
 
